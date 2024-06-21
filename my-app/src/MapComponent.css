@@ -1,0 +1,46 @@
+/* .map-container {
+    height: 100%;
+    width: 100%;
+  } */
+  
+  .marker {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    position: relative;
+    border: 2px solid white; 
+    z-index: 1;
+  }
+  
+  .active-marker::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;  /* Half the height */
+    margin-left: -20px;  /* Half the width */
+    border-radius: 50%;
+    background-color: #318CE7;
+    animation: pulse 2s infinite;
+    z-index: -1;
+    
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+  }
+  
